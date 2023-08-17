@@ -34,7 +34,7 @@ class DynamicShaderHandler
 		var fragSource:String = "";
 
 		#if MODS_ALLOWED
-		if (Paths.modFolders(path))
+		if (Paths.modsShaderFragment)
 		{
 			fragSource = SUtil.getPath() + Paths.shaderFragment(fileName);
 		}
@@ -66,10 +66,7 @@ class DynamicShaderHandler
 		
 		if (PlayState.instance.modchartSprites)
 		{
-			if (PlayState.modchartSprites != null)
-			{
 				PlayState.luaShaders[fileName] = this;
-			}
 		}
 	}
 
