@@ -2195,7 +2195,7 @@ class PlayState extends MusicBeatState
 		{
 			shader.update(elapsed);
 		}
-		#if #FEATURE_LUAMODCHART
+		#if FEATURE_LUAMODCHART
 		for (key => value in luaModchart.luaShaders)
 		{
 			value.update(elapsed);
