@@ -8,7 +8,7 @@ import llua.Convert;
 import animateatlas.AtlasFrameMaker;
 import flixel.FlxG;
 import flixel.addons.effects.FlxTrail;
-import flixel.addons.effects.shader.ShaderFilter;
+import flixel.addons.display.FlxRuntimeShader;
 import flixel.input.keyboard.FlxKey;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
@@ -1762,7 +1762,7 @@ class FunkinLua {
 
 				for (i in shaderName)
 				{
-					shaderArray.push(new ShaderFilter(luaShaders[i].shader));
+					shaderArray.push(new FlxRuntimeShader(luaShaders[i].shader));
 				}
 
 			camTarget.setFilters(shaderArray);
