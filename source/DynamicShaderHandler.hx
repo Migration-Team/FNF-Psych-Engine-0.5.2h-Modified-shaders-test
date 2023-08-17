@@ -38,6 +38,7 @@ class DynamicShaderHandler
 		{
 			fragSource = SUtil.getPath() + Paths.shaderFragment(fileName);
 		}
+		#end
 
 		if (fragSource != "")
 		{
