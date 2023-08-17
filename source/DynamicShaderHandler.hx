@@ -33,13 +33,7 @@ class DynamicShaderHandler
 
 		var fragSource:String = "";
 
-		#if MODS_ALLOWED
-		if (Paths.modsShaderFragment)
-		{
-			fragSource = SUtil.getPath() + Paths.shaderFragment(fileName);
-		}
-		#end
-
+		
 		if (fragSource != "")
 		{
 			shader = new FlxGraphicsShader(fragSource, optimize);
@@ -64,11 +58,6 @@ class DynamicShaderHandler
 
 		PlayState.animatedShaders[fileName] = this;
 		
-		if (PlayState.instance.modchartSprites)
-		{
-				PlayState.luaShaders[fileName] = this;
-		}
-	}
 
 	public function modifyShaderProperty(property:String, value:Dynamic)
 	{
