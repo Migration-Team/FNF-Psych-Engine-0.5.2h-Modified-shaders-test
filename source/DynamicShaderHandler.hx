@@ -33,7 +33,7 @@ class DynamicShaderHandler
 
 		var fragSource:String = "";
 
-		if (Paths.doesTextAssetExist(path))
+		if (Paths.getTextFromFile(path))
 		{
 			fragSource = sys.io.File.getContent(path);
 		}
