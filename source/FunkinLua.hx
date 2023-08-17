@@ -1735,6 +1735,57 @@ class FunkinLua {
 			FlxG.sound.music.fadeOut(duration, toValue);
 			luaTrace('musicFadeOut is deprecated! Use soundFadeOut instead.', false, true);
 		});
+		Lua_helper.add_callback(lua, "createShaders", function(shaderName, ?optimize:Bool = false) {
+			var shader = new DynamicShaderHandler(shaderName, optimize);
+			return shaderName;
+		});
+
+		Lua_helper.add_callback(lua, "modifyShaderProperty", function(shaderName, propertyName, value) {
+			var handler = luaShaders[shaderName];
+			handler.modifyShaderProperty(propertyName, value);
+		});
+
+		// shader set
+
+		Lua_helper.add_callback(lua, "setShadersToCamera", function(shaderName:Array<String>, cameraName) {
+			switch (cameraName)
+		{
+			case 'hud':
+				camTarget = PlayState.instance.camHUD;
+			case 'notes':
+				camTarget = PlayState.instance.camNotes;
+			case 'sustains':
+				camTarget = PlayState.instance.camSustains;
+			case 'game':
+				camTarget = FlxG.camera;
+		}
+
+			var shaderArray = new Array<BitmapFilter>();
+
+				for (i in shaderName)
+				{
+					shaderArray.push(new ShaderFilter(luaShaders[i].shader));
+				}
+
+			camTarget.setFilters(shaderArray);
+		});
+
+		// shader clear
+
+		Lua_helper.add_callback(lua, "clearShadersFromCamera", function(cameraName) {
+			switch (cameraName)
+		{
+			case 'hud':
+				camTarget = PlayState.instance.camHUD;
+			case 'notes':
+				camTarget = PlayState.instance.camNotes;
+			case 'sustains':
+				camTarget = PlayState.instance.camSustains;
+			case 'game':
+				camTarget = FlxG.camera;
+		}
+		camTarget.setFilters([]);
+		});
 		
 		call('onCreate', []);
 		#end
