@@ -1754,8 +1754,6 @@ class FunkinLua {
 		{
 			case 'hud':
 				camTarget = PlayState.instance.camHUD;
-			case 'notes':
-				camTarget = PlayState.instance.daNote;
 			case 'game':
 				camTarget = FlxG.camera;
 		}
@@ -1777,8 +1775,6 @@ class FunkinLua {
 		{
 			case 'hud':
 				camTarget = PlayState.instance.camHUD;
-			case 'notes':
-				camTarget = PlayState.instance.daNote;
 			case 'game':
 				camTarget = FlxG.camera;
 		}
