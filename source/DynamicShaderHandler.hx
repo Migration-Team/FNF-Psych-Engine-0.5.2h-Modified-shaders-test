@@ -57,7 +57,7 @@ class DynamicShaderHandler
 		}
 
 		PlayState.animatedShaders[fileName] = this;
-		
+	}
 
 	public function modifyShaderProperty(property:String, value:Dynamic)
 	{
