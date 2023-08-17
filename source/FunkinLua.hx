@@ -8,6 +8,7 @@ import llua.Convert;
 import animateatlas.AtlasFrameMaker;
 import flixel.FlxG;
 import flixel.addons.effects.FlxTrail;
+import flixel.addons.effects.shader.ShaderFilter;
 import flixel.input.keyboard.FlxKey;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
@@ -1754,9 +1755,7 @@ class FunkinLua {
 			case 'hud':
 				camTarget = PlayState.instance.camHUD;
 			case 'notes':
-				camTarget = PlayState.instance.camNotes;
-			case 'sustains':
-				camTarget = PlayState.instance.camSustains;
+				camTarget = PlayState.instance.daNote;
 			case 'game':
 				camTarget = FlxG.camera;
 		}
@@ -1779,9 +1778,7 @@ class FunkinLua {
 			case 'hud':
 				camTarget = PlayState.instance.camHUD;
 			case 'notes':
-				camTarget = PlayState.instance.camNotes;
-			case 'sustains':
-				camTarget = PlayState.instance.camSustains;
+				camTarget = PlayState.instance.daNote;
 			case 'game':
 				camTarget = FlxG.camera;
 		}
