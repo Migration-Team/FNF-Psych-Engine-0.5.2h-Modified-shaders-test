@@ -54,6 +54,7 @@ class FunkinLua {
 	#if LUA_ALLOWED
 	public var lua:State = null;
 	#end
+	public var luaShaders:Map<String, DynamicShaderHandler> = new Map<String, DynamicShaderHandler>();
 	public var camTarget:FlxCamera;
 	public var scriptName:String = '';
 	var gonnaClose:Bool = false;
