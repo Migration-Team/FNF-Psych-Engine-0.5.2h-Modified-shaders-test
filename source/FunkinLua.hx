@@ -1762,7 +1762,7 @@ class FunkinLua {
 
 				for (i in shaderName)
 				{
-					shaderArray.push(new Shader(luaShaders[i].shader));
+					shaderArray.push(new Shader(shaderName));
 				}
 
 			camTarget.setFilters(shaderArray);
